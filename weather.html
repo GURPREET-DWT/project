@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav class="navbar">
+  <div class="logo">🌱 Grow Happy</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="plants.html">Plants</a>
+    <a href="ai.html">AI Identifier</a>
+    <a href="weather.html" onclick="openWeather()">Weather Alerts</a>
+    <a href="#contact">Contact</a>
+
+    <a href="login.html" id="loginBtn">Login</a>
+    <button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<!-- WEATHER -->
+<section class="page">
+ <div class="weather-card">
+  <h3>🌦️ Smart Weather Alert</h3>
+  <p id="weatherAlert">Detecting your city...</p>
+ </div>
+ <h2>🌦️ Smart Weather</h2>
+
+<input type="text" id="cityInput" placeholder="Enter city name">
+<button onclick="getWeather()">Check Weather</button>
+
+<div id="weatherResult"></div>
+
+</section>
+<script src="auth.js"></script>
+<script src="weather.js"></script>
+<script>autoDetectWeather();</script>
+</body>
+</html>

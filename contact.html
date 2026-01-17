@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    |<style>
+        .navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  font-size:1.6rem;
+  font-weight:700;
+}
+
+.nav-links a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+}
+
+.nav-links a:hover{
+  color:#c8e6c9;
+}
+        .contact-section {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.contact-section textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact-section button {
+  background: linear-gradient(135deg, #3cb371, #2e8b57);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.contact-section button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #2e8b57, #3cb371);
+}
+
+.success-msg {
+  display: none;
+  margin-top: 15px;
+  color: #2e8b57;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body{
+   
+    background-image:url(https://media.istockphoto.com/id/1392994491/photo/alone-tree-on-green-meadow-against-cloudy-sky-at-dawn.jpg?s=612x612&w=0&k=20&c=caTOjYK5e8tm59BNultYTaC44GurCYt5wLG8lNrCsQI=);
+    background-repeat: no-repeat;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+  <div class="logo">🌱 Grow Happy</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="plants.html">Plants</a>
+    <a href="ai.html">AI Identifier</a>
+    <a href="weather.html">Weather Alerts</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="login.html" id="loginBtn">Login</a>
+    <button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+     <section id="contact" class="page glass contact-section">
+  <h2>📞 Contact Us</h2>
+
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p id="successMsg" class="success-msg">✅ Message sent successfully!</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grow Happy | Home</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    a{
+        color:white;
+        text-decoration: none;
+    }
+</style>
+<script>
+function sendMessage(event){
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if(!name || !email || !message){
+    alert("Please fill all fields");
+    return;
+  }
+
+  document.getElementById("contactStatus").style.color = "limegreen";
+  document.getElementById("contactStatus").innerText =
+    "✅ Thank you " + name + "! Your message was sent successfully.";
+
+  document.getElementById("contactForm").reset();
+}
+</script>
+<script>
+async function getWeather(){
+  const city = document.getElementById("cityInput").value.trim();
+  const result = document.getElementById("weatherResult");
+
+  if(city === ""){
+    result.innerText = "Please enter a city name";
+    return;
+  }
+
+  try{
+    const response = await fetch(`https://wttr.in/${city}?format=3`);
+    const data = await response.text();
+
+    result.innerText = "📍 " + data;
+  }
+  catch{
+    result.innerText = "Unable to fetch weather";
+  }
+}
+</script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault(); // stop page refresh
+
+  // show success message
+  const msg = document.getElementById("successMsg");
+  msg.style.display = "block";
+
+  // reset form
+  this.reset();
+
+  // auto-hide after 3 seconds
+  setTimeout(() => {
+    msg.style.display = "none";
+  }, 3000);
+});
+</script>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">🌱 Grow Happy</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="plants.html">Plants</a>
+    <a href="ai.html">AI Identifier</a>
+   
+    
+    <a href="login.html" id="loginBtn">Login</a>
+    <button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero">
+  <center>
+  <div class="glass hero-content" style="margin-top:150px;">
+    <h1>Grow Happy, Grow Green 🌿</h1>
+    <p>Smart plant care with AI & weather alerts</p>
+  </div>
+  </center>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section glass reveal">
+ 
+
+  <div class="about-container">
+    <div class="about-text">
+      <h2>🌱 About Grow Happy</h2>
+      <p>
+        <strong>Grow Happy</strong> is a smart plant care platform designed to help
+        plant lovers grow healthier, happier plants using technology.
+      </p>
+
+      <p>
+        We combine <strong>AI-powered plant identification</strong>,
+        <strong>weather-based care alerts</strong>, and
+        <strong>expert-backed guidance</strong> to simplify plant care
+        for beginners and enthusiasts alike.
+      </p>
+
+      <p>
+        Whether you own indoor plants, outdoor gardens, or medicinal herbs,
+        Grow Happy ensures your plants receive the right care at the right time.
+      </p>
+
+      <ul>
+        <li>🌿 AI Plant Recognition</li>
+        <li>🌦️ Smart City-Based Weather Alerts</li>
+        <li>🪴 Beginner-Friendly Plant Guides</li>
+        <li>📅 Care Reminders & Expert Support</li>
+      </ul>
+    </div>
+
+    <div class="about-image">
+      <img src="pic.png">
+    </div>
+  </div>
+</section>
+
+
+<!-- WEATHER -->
+<section class="page">
+ <div class="weather-card">
+  <h3>🌦️ Smart Weather Alert</h3>
+  <p id="weatherAlert">Detecting your city...</p>
+ </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="page">
+<h2>🌿 Features</h2>
+
+<a href="plants.html"><div class="plant-grid">
+ <div class="plant-card">
+  <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+  <div class="content">
+   <h3>Plant Shop</h3>
+   <p>Indoor, outdoor, medicinal plants</p>
+  </div>
+ </div>
+</a>
+<a href="ai.html">
+ <div class="plant-card">
+  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+  <div class="content">
+   <h3>AI Plant Identifier</h3>
+   <p>Upload image & identify plant</p>
+  </div>
+ </div>
+</a>
+
+
+
+<!-- ABOUT -->
+
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+  <section id="contact" class="page glass contact-section">
+  <h2>📞 Contact Us</h2>
+
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p id="successMsg" class="success-msg">✅ Message sent successfully!</p>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>🌱 Grow Happy</h3>
+      <p>
+        Smart plant care powered by AI, weather alerts, and expert guidance.
+      </p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="login.html">Login</a>
+    </div>
+
+    <div class="footer-box">
+      <h4>Connect With Us</h4>
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+        <a href="#">🐦</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 Grow Happy | All Rights Reserved 🌿
+  </p>
+</footer>
+
+
+
+<script src="auth.js"></script>
+<script src="weather.js"></script>
+<script>autoDetectWeather();</script>
+
+</body>
+</html>

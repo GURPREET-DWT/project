@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Plant Identifier</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">🌱 Grow Happy</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="plants.html">Plants</a>
+    <a href="ai.html">AI Identifier</a>
+
+    <a href="login.html" id="loginBtn">Login</a>
+    <button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+
+<div class="page glass" style="margin-top: 100px; width:1000px;margin-left:80px;">
+<h2>🤖 AI Plant Identifier</h2>
+
+<input type="file">
+<button onclick="demoAI()">Identify Plant</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+function demoAI(){
+ document.getElementById("result").innerHTML =
+ `<h3>🌿 Aloe Vera</h3>
+  <p>Medicinal plant</p>
+  <p>Water: Low | Sun: Medium</p>`;
+}
+</script>
+
+<script src="auth.js"></script>
+</body>
+</html>

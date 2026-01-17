@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav class="navbar">
+  <div class="logo">🌱 Grow Happy</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="plants.html">Plants</a>
+    <a href="ai.html">AI Identifier</a>
+   
+
+    <a href="login.html" id="loginBtn">Login</a>
+    <button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+    <section id="plants" class="page">
+<h2>🪴 Show Plants</h2>
+
+<div class="plant-grid">
+
+  <div class="plant-card">
+    <img src="https://rukminim2.flixcart.com/image/480/640/krtjgcw0/plant-sapling/p/e/e/dracaena-trifasciata-01-click-to-buy-original-imag5gjyjywzffsk.jpeg?q=90">
+    <div class="content">
+      <h3>Snake Plant</h3>
+      <p>Indoor | Low Water</p>
+      <p class="price">₹99</p>
+      <button onclick="addToCart('Snake Plant', 99)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="plant-card">
+    <img src="https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/aloe-vera-white-pot_sunwand24-ss_edit_0.jpg?itok=uOJaHAeR">
+    <div class="content">
+      <h3>Aloe Vera</h3>
+      <p>Medicinal | Easy Care</p>
+      <p class="price">₹49</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="plant-card">
+    <img src="https://cdn11.bigcommerce.com/s-fr32feerow/images/stencil/832x750/uploaded_images/peace-lily-01.jpg?t=1483630233">
+    <div class="content">
+      <h3>Peace Lily</h3>
+      <p>Air Purifying</p>
+      <p class="price">₹149</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="plant-card">
+    <img src="https://i.pinimg.com/736x/b8/30/b2/b830b25380d277b16268016ceb82139c.jpg">
+    <div class="content">
+      <h3>Money Plant</h3>
+      <p>Indoor | Fast Growth</p>
+      <p class="price">₹49</p>
+      <button onclick="addToCart('Money Plant', 49)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="plant-card">
+    <img src="https://www.ugaoo.com/cdn/shop/files/medium-gropot-ivory-areca-palm-plant-32515461578884.jpg?v=1755585947&width=1000">
+    <div class="content">
+      <h3>Areca Palm</h3>
+      <p>Outdoor | Medium Water</p>
+      <p class="price">₹99</p>
+      <button onclick="addToCart('Areca Palm', 99)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="plant-card">
+    <img src="https://cdn.britannica.com/87/207887-050-F48CB55D/basil.jpg">
+    <div class="content">
+      <h3>Tulsi</h3>
+      <p>Medicinal | Sacred Plant</p>
+      <p class="price">₹29</p>
+      <button onclick="addToCart('Tulsi', 29)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="plant-card">
+    <img src="https://hips.hearstapps.com/hmg-prod/images/jade-plant-1-645157c445e14.jpg">
+    <div class="content">
+      <h3>Jade Plant</h3>
+      <p>Indoor | Lucky Plant</p>
+      <p class="price">₹99</p>
+      <button onclick="addToCart('Jade Plant', 99)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="plant-card">
+    <img src="https://i.pinimg.com/236x/99/c1/1c/99c11c6bcf97b7c3b13360da4ec02dfb.jpg">
+    <div class="content">
+      <h3>Rose Plant</h3>
+      <p>Flowering | Outdoor</p>
+      <p class="price">₹99</p>
+      <button onclick="addToCart('Rose Plant', 99)">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<p id="cartSuccessMsg" class="success-msg">✅ Added to Cart!</p>
+
+<script src="auth.js"></script>
+<script src="weather.js"></script>
+<script>autoDetectWeather();</script>
+</body>
+</html>

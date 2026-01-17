@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard | Grow Happy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<script>
+if(localStorage.getItem("role") !== "admin"){
+  alert("Admin access only!");
+  window.location.href = "index.html";
+}
+</script>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">🌱 Grow Happy</div>
+  <div class="nav-links">
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<!-- ADMIN LAYOUT -->
+<div class="admin-container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>👩‍💼 Admin Panel</h3>
+    <button onclick="showSection('orders')">🛒 Orders</button>
+    <button onclick="showSection('favorites')">❤️ Favorites</button>
+    <button onclick="showSection('reminders')">⏰ Reminders</button>
+  </aside>
+
+  <!-- MAIN DASHBOARD -->
+  <main class="dashboard">
+
+    <!-- ORDERS -->
+    <section id="orders" class="card">
+      <h2>🛒 Plant Purchase Requests</h2>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Plant</th>
+            <th>Price</th>
+            <th>User</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="orderTable"></tbody>
+      </table>
+    </section>
+
+    <!-- FAVORITES -->
+    <section id="favorites" class="card" style="display:none">
+      <h2>❤️ User Favorites</h2>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Plant</th>
+            <th>User</th>
+          </tr>
+        </thead>
+        <tbody id="favTable"></tbody>
+      </table>
+    </section>
+
+    <!-- REMINDERS -->
+    <section id="reminders" class="card" style="display:none">
+      <h2>⏰ Care Reminders</h2>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Plant</th>
+            <th>Reminder</th>
+          </tr>
+        </thead>
+        <tbody id="reminderTable"></tbody>
+      </table>
+    </section>
+
+  </main>
+</div>
+
+<!-- WEATHER CARD -->
+<div class="card weather-card">
+  <h2>🌦️ Weather Insight</h2>
+  <p>Weather-based alerts help reduce plant loss & improve care quality.</p>
+</div>
+
+<!-- CHART -->
+<canvas id="orderChart" height="120"></canvas>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+<script src="auth.js"></script>
+
+<script>
+loadOrders();
+loadCharts();
+</script>
+
+</body>
+</html>
